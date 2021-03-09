@@ -1,0 +1,8 @@
+im:
+  aop:
+    loggers:
+      enabled: true
+      entering-message: "Entering [{method}] with parameters [{parameters}]"
+      exited-message: "[{method}] exited normally with return value [{return-value}]"
+      exited-abnormally-message: "[{method}] exited abnormally with exception [{exception}]"
+      elapsed-message: "[{method}] elapsed [{elapsed}]"
