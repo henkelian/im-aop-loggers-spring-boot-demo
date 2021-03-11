@@ -10,10 +10,10 @@
 	</parent>
 	<groupId>com.github.henkelian</groupId>
 	<artifactId>im-aop-loggers-spring-boot-demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<properties>
 		<java.version>11</java.version>
-    <im-aop-loggers-spring-boot.version>1.0.0</im-aop-loggers-spring-boot.version>
+    <im-aop-loggers-spring-boot.version>${project.version}</im-aop-loggers-spring-boot.version>
 	</properties>
 	<dependencies>
     <dependency>
