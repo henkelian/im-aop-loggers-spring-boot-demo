@@ -2,7 +2,11 @@ im:
   aop:
     loggers:
       enabled: true
+      entering-level: INFO
       entering-message: "Entering [{method}] with parameters [{parameters}]"
+      exited-level: INFO
       exited-message: "[{method}] exited normally with return value [{return-value}]"
+      exited-abnormally-level: WARN
       exited-abnormally-message: "[{method}] exited abnormally with exception [{exception}]"
+      elapsed-level: INFO
       elapsed-message: "[{method}] elapsed [{elapsed}]"
