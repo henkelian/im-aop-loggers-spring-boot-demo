@@ -7,7 +7,7 @@ import im.aop.loggers.advice.around.LogAround;
 @Service
 public class QuxService {
 
-  @LogAround
+  @LogAround(elapsedTimeLimit = 5)
   public Qux accept(Qux qux) {
     return qux;
   }
