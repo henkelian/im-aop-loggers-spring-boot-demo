@@ -43,6 +43,12 @@ public class DemoApplication {
     } catch (Exception e) {
     }
 
+    try {
+      bazService.accept("");
+
+    } catch (Exception e) {
+    }
+
     quxService.accept(new Qux("abc"));
   }
 }
