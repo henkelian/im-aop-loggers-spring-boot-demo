@@ -1,6 +1,5 @@
 package im.aop.loggers.demo.baz;
 
-import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.stereotype.Service;
@@ -17,7 +16,7 @@ public class BazService {
     throw new IllegalArgumentException("Baz");
   }
 
-  @LogAfterThrowing(ignoreExceptions = {ConstraintViolationException.class})
+  @LogAfterThrowing
   public Baz accept(@NotBlank String message) {
     return new Baz(message);
   }

@@ -8,6 +8,8 @@ im:
       exited-message: "[{method}] exited normally with return value [{return-value}]"
       exited-abnormally-level: ERROR
       exited-abnormally-message: "[{method}] exited abnormally with exception [{exception}]"
+      ignore-exceptions:
+      - javax.validation.ConstraintViolationException
       elapsed-level: INFO
       elapsed-message: "[{method}] elapsed [{elapsed}]"
       elapsed-warning-level: WARN
