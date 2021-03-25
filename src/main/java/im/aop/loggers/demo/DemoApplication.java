@@ -1,5 +1,7 @@
 package im.aop.loggers.demo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +21,8 @@ import im.aop.loggers.demo.qux.QuxService;
 @EnableScheduling
 public class DemoApplication {
 
+  private static final Logger LOGGER = LoggerFactory.getLogger(DemoApplication.class);
+
   public static void main(String[] args) {
     SpringApplication.run(DemoApplication.class, args);
   }
@@ -33,22 +37,27 @@ public class DemoApplication {
 
   @Scheduled(initialDelay = 1000, fixedDelay = 15000)
   void runDemo() {
-    fooService.accept(new Foo("abc"));
+    final Foo foo = fooService.accept(new Foo("abc"));
+    LOGGER.info("FooService.accept(Foo) returned [{}]", foo);
 
-    barService.accept(new Bar("abc"));
+    final Bar bar = barService.accept(new Bar("abc"));
+    LOGGER.info("BarService.accept(Bar) returned [{}]", bar);
 
     try {
       bazService.accept(new Baz("abc"));
 
     } catch (Exception e) {
+      LOGGER.info("BazService.accept(Baz) thrown exception [{}]", e.getMessage());
     }
 
     try {
       bazService.accept("");
 
     } catch (Exception e) {
+      LOGGER.info("BazService.accept(String) thrown exception [{}]", e.getMessage());
     }
 
-    quxService.accept(new Qux("abc"));
+    final Qux qux = quxService.accept(new Qux("abc"));
+    LOGGER.info("QuxService.accept(Qux) returned [{}]", qux);
   }
 }
