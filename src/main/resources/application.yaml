@@ -15,3 +15,7 @@ im:
       elapsed-message: "[{method}] elapsed [{elapsed}]"
       elapsed-warning-level: WARN
       elapsed-warning-message: "[{method}] reached elapsed time limit [{elapsed-time-limit}]"
+
+logging:
+  level:
+    im.aop.loggers: DEBUG
